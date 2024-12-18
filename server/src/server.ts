@@ -3,7 +3,6 @@ import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import crypto from "crypto";
 import cors from "cors";
-// import { PAYU_KEY, PAYU_SALT } from "./config";
 
 dotenv.config();
 const app = express();
