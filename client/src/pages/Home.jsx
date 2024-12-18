@@ -23,18 +23,14 @@ const Home = () => {
     mobile,
   }) => {
     try {
-      const data = await (
-        await axios.post("http://localhost:4000/get-payment", {
-          amount,
-          product,
-          firstname,
-          email,
-          mobile,
-        })
-      ).data;
-      console.log(data);
-      setForm(data);
-      console.log(form);
+      const response = await axios.post("http://localhost:4000/get-payment", {
+        amount,
+        product,
+        firstname,
+        email,
+        mobile,
+      });
+      setForm(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -79,13 +75,6 @@ const Home = () => {
                                 title: cur.title,
                                 price: cur.price,
                               },
-                              //   firstname: "Krishna",
-                              //   email: `harish${Math.floor(
-                              //     Math.random() * 56
-                              //   )}@gmail.com`,
-                              //   mobile: `85${Math.floor(
-                              //     Math.random() * 56000
-                              //   )}485`,
                             });
                           }}
                           className="px-4  py-2 bg-black text-white rounded-md shadow"

@@ -1,9 +1,18 @@
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Status = () => {
+  const [status1, setStatus] = useState("");
+  const [id1, setId] = useState("");
   const { status, id } = useParams();
   const navigate = useNavigate();
+  console.log("before", status, id, status1, id1);
+  useEffect(() => {
+    setStatus(status);
+    setId(id);
+  }, [status, id]);
 
+  console.log(status1, id1);
   return (
     <>
       <div className="h-screen flex items-center justify-center flex-col">
